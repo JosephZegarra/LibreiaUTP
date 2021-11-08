@@ -9,6 +9,8 @@ package Librería;
  *
  * @author Home
  */
-public class MantenimientoDeCategorías {
+public class MantenimientoDeCategorías 
+{
+    private String código, nombre, descripción, categoría;
     
 }
