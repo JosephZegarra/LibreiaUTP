@@ -13,4 +13,5 @@ public class MantenimientoDeCategorías
 {
     private String código, nombre, descripción, categoría;
     
+    
 }
