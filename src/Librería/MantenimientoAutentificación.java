@@ -13,16 +13,43 @@ import FormulariosSwing.JFrame_Autentificación;
 public class MantenimientoAutentificación 
 {
     //Atributos
-    private String admin="dueño", trabajador="trabajador", contraseñaAdmin="dueño1234",
-            contraseñaTrabajador="trabajador1234";
+    private static String admin, trabajador, contraseñaAdmin,contraseñaTrabajador;
     
+    
+    //Constructores
+
+    public MantenimientoAutentificación() 
+    {
+        this.admin="dueño";
+        this.contraseñaAdmin="dueño1234";
+        this.trabajador="trabajador";
+        this.contraseñaTrabajador="trabajador1234";
+    }
+    
+ 
+    
+    //getter and Setter
+    public String getAdmin()
+    {
+        return admin;
+    }
+
+    public String getTrabajador() {
+        return trabajador;
+    }
+
+    public String getContraseñaAdmin() {
+        return contraseñaAdmin;
+    }
+
+    
+    public String getContraseñaTrabajador() {    
+        return contraseñaTrabajador;
+    }
+
     //Constructor
     //Metodos
     
-    private int AtentificaciónUsuario(String Usuario)
-    {
-        if(this.Usuario = admin)
-    }
     
 
     
