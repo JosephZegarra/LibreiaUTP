@@ -13,7 +13,7 @@ import FormulariosSwing.JFrame_Autentificación;
 public class MantenimientoAutentificación 
 {
     //Atributos
-    private static String admin, trabajador, contraseñaAdmin,contraseñaTrabajador;
+    private  String admin, trabajador, contraseñaAdmin,contraseñaTrabajador;
     
     
     //Constructores

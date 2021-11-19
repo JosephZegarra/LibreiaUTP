@@ -6,6 +6,7 @@
 package FormulariosSwing;
 import Librería.MantenimientoAutentificación;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Home
@@ -34,7 +35,7 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
         jLabel3 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
-        JContraseña = new javax.swing.JPasswordField();
+        txtContraseña = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,8 +55,17 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
         });
 
         btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
-        JContraseña.setText("jPasswordField1");
+        txtContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContraseñaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -77,7 +87,7 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                                    .addComponent(JContraseña))))))
+                                    .addComponent(txtContraseña))))))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -92,8 +102,8 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(JContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(btnAceptar)
                 .addContainerGap())
         );
@@ -112,15 +122,56 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
             .addGroup(layout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private int validaciónUsuario=0, validaciónContraseña=0;
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
-      if(autentificación.getAdmin())  
+       if(txtUsuario.getText().equalsIgnoreCase(autentificación.getAdmin())) 
+       {
+           validaciónUsuario=1;
+       }
+       else{
+           validaciónUsuario=0;
+       }
     }//GEN-LAST:event_txtUsuarioActionPerformed
+
+    private void txtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaActionPerformed
+        if(txtContraseña.getText().equalsIgnoreCase(autentificación.getAdmin())) 
+       {
+           validaciónContraseña=1;
+       }
+       else{
+           validaciónContraseña=0;
+       }
+    }//GEN-LAST:event_txtContraseñaActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+       if(txtUsuario.getText().equalsIgnoreCase(autentificación.getAdmin())) 
+       {
+           validaciónUsuario=1;
+       }
+       else{
+           validaciónUsuario=0;
+       }
+        
+        if(txtContraseña.getText().equalsIgnoreCase(autentificación.getAdmin())) 
+       {
+           validaciónContraseña=1;
+       }
+       else{
+           validaciónContraseña=0;
+       } 
+        
+       
+        
+        if(validaciónUsuario==1 && validaciónContraseña==1)
+           
+            JOptionPane.showInputDialog("mensaje");
+            //llevar al formulario principal
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,12 +209,12 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField JContraseña;
     private javax.swing.JButton btnAceptar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
