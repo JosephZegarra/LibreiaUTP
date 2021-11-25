@@ -205,7 +205,7 @@ public class JFrame_RegistrarPedidos extends javax.swing.JFrame {
                                             .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
                                         .addGap(325, 325, 325)
                                         .addComponent(jToggleButton1)))))
-                        .addGap(0, 620, Short.MAX_VALUE))))
+                        .addGap(0, 14, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
