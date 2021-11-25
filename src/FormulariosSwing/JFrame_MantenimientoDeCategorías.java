@@ -35,6 +35,7 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         Table1 = new javax.swing.JTable();
@@ -92,6 +93,8 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
 
         btnEliminar.setText("Eliminar categoría");
 
+        btnAtras.setText("Atras");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -103,9 +106,14 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
                     .addComponent(btnRegistrar))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEliminar)
-                    .addComponent(btnModificar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnModificar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnEliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAtras)
+                        .addGap(20, 20, 20))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +125,8 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
-                    .addComponent(btnEliminar))
+                    .addComponent(btnEliminar)
+                    .addComponent(btnAtras))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -216,6 +225,7 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Table1;
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
