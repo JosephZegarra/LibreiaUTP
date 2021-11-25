@@ -136,22 +136,22 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton1 Mantenimiento de clientes"/>
+            <Property name="text" type="java.lang.String" value=" Mantenimiento de clientes"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton2 Mantenimiento de productos"/>
+            <Property name="text" type="java.lang.String" value="Mantenimiento de productos"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton3 Mantenimiento de categor&#xed;as"/>
+            <Property name="text" type="java.lang.String" value=" Mantenimiento de categor&#xed;as"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton4 Registrar pedidos"/>
+            <Property name="text" type="java.lang.String" value=" Registrar pedidos"/>
           </Properties>
         </Component>
       </SubComponents>

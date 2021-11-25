@@ -66,13 +66,13 @@ public class JFrame_Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Acciones");
 
-        jButton1.setText("jButton1 Mantenimiento de clientes");
+        jButton1.setText(" Mantenimiento de clientes");
 
-        jButton2.setText("jButton2 Mantenimiento de productos");
+        jButton2.setText("Mantenimiento de productos");
 
-        jButton3.setText("jButton3 Mantenimiento de categorías");
+        jButton3.setText(" Mantenimiento de categorías");
 
-        jButton4.setText("jButton4 Registrar pedidos");
+        jButton4.setText(" Registrar pedidos");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
