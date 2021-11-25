@@ -171,4 +171,30 @@ public class JFrame_Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+    static class java {
+
+        public java() {
+        }
+
+        void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private static class awt {
+
+            public awt() {
+            }
+
+            private static class EventQueue {
+
+                private static void invokeLater(Runnable runnable) {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                public EventQueue() {
+                }
+            }
+        }
+    }
 }

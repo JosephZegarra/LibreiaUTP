@@ -5,7 +5,6 @@
  */
 package FormulariosSwing;
 import Librería.MantenimientoAutentificación;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 /**
  *
@@ -31,11 +30,11 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        lblContraseña = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         btnAceptar = new javax.swing.JButton();
-        txtContraseña = new javax.swing.JTextField();
+        Password = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,9 +43,9 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("INICIAR SESION");
 
-        jLabel2.setText("Usuario");
+        lblUsuario.setText("Usuario");
 
-        jLabel3.setText("Contraseña");
+        lblContraseña.setText("Contraseña");
 
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,15 +54,20 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
         });
 
         btnAceptar.setText("Aceptar");
+        btnAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAceptarMouseClicked(evt);
+            }
+        });
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarActionPerformed(evt);
             }
         });
 
-        txtContraseña.addActionListener(new java.awt.event.ActionListener() {
+        Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContraseñaActionPerformed(evt);
+                PasswordActionPerformed(evt);
             }
         });
 
@@ -82,12 +86,12 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
                             .addComponent(btnAceptar)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2))
+                                    .addComponent(lblContraseña)
+                                    .addComponent(lblUsuario))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                                    .addComponent(txtContraseña))))))
+                                    .addComponent(Password))))))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -97,13 +101,13 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
                 .addComponent(jLabel1)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(lblUsuario)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                    .addComponent(lblContraseña)
+                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(btnAceptar)
                 .addContainerGap())
         );
@@ -122,7 +126,7 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
             .addGroup(layout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();
@@ -138,16 +142,6 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
        }
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void txtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaActionPerformed
-        if(txtContraseña.getText().equalsIgnoreCase(autentificación.getAdmin())) 
-       {
-           validaciónContraseña=1;
-       }
-       else{
-           validaciónContraseña=0;
-       }
-    }//GEN-LAST:event_txtContraseñaActionPerformed
-
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
        if(txtUsuario.getText().equalsIgnoreCase(autentificación.getAdmin())) 
        {
@@ -157,7 +151,7 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
            validaciónUsuario=0;
        }
         
-        if(txtContraseña.getText().equalsIgnoreCase(autentificación.getAdmin())) 
+        if(lblContraseña.getText().equalsIgnoreCase(autentificación.getAdmin())) 
        {
            validaciónContraseña=1;
        }
@@ -172,6 +166,29 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
             JOptionPane.showInputDialog("mensaje");
             //llevar al formulario principal
     }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordActionPerformed
+
+    private void btnAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAceptarMouseClicked
+        // TODO add your handling code here:
+        String Usuario="admin";
+        String Contraseña="1234";
+        
+        String Pass=new String(Password.getPassword());
+        
+        if(txtUsuario.getText().equals(Usuario)&& Pass.equals(Contraseña)){
+            JFrame_Principal.java prin=new JFrame_Principal.java();
+            prin.setVisible(true);
+            dispose();
+           
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "usuario o contraseña incorrecta");
+        }
+        
+    }//GEN-LAST:event_btnAceptarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -209,12 +226,12 @@ MantenimientoAutentificación autentificación = new MantenimientoAutentificaci�
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField Password;
     private javax.swing.JButton btnAceptar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JLabel lblContraseña;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
