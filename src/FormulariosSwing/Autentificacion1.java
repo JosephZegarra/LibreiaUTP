@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
  * @author ACER
  */
 public class Autentificacion1 extends javax.swing.JFrame {
-     String usuario="asd";
-     String pass="1234";
+     String usuario="Angel";
+     String pass="12345";
 
     /**
      * Creates new form Autentificacion1

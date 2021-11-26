@@ -18,6 +18,30 @@ public class JFrame_Principal extends javax.swing.JFrame {
      */
     public JFrame_Principal() {
         initComponents();
+        initComponents();
+        setLocationRelativeTo(null);// habre enla parte central de la pantalla 
+        setResizable(false);// el usuario no modifica el tamaño del formulario
+        setTitle("login");
+    }
+void MantenimientoCliente(){
+        JFrame_MantenimientoDeClientes mancli=new JFrame_MantenimientoDeClientes();
+            mancli.setVisible(true);
+            dispose();
+    }
+void MantenimientoProducto(){
+        JFrame_MantenimientoDeProductos manpro=new JFrame_MantenimientoDeProductos();
+            manpro.setVisible(true);
+            dispose();
+    }
+void MantenimientoCategorias(){
+        JFrame_MantenimientoDeCategorías mancate=new JFrame_MantenimientoDeCategorías();
+            mancate.setVisible(true);
+            dispose();
+    }
+void RegistrarPedidos(){
+        JFrame_RegistrarPedidos regipe=new JFrame_RegistrarPedidos();
+            regipe.setVisible(true);
+            dispose();
     }
 
     /**
@@ -73,10 +97,25 @@ public class JFrame_Principal extends javax.swing.JFrame {
         });
 
         btnProductos.setText("Mantenimiento de Productos");
+        btnProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProductosActionPerformed(evt);
+            }
+        });
 
         btnCategorías.setText("Mantenimiento de Categorías");
+        btnCategorías.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoríasActionPerformed(evt);
+            }
+        });
 
         btnRegistrarPedidos.setText("Registrar Pedidos");
+        btnRegistrarPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarPedidosActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Acciones");
@@ -131,8 +170,20 @@ public class JFrame_Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteActionPerformed
-        // TODO add your handling code here:
+MantenimientoCliente();        // TODO add your handling code here:
     }//GEN-LAST:event_btnClienteActionPerformed
+
+    private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
+MantenimientoProducto();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProductosActionPerformed
+
+    private void btnCategoríasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoríasActionPerformed
+MantenimientoCategorias();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCategoríasActionPerformed
+
+    private void btnRegistrarPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPedidosActionPerformed
+RegistrarPedidos();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarPedidosActionPerformed
 
     /**
      * @param args the command line arguments
