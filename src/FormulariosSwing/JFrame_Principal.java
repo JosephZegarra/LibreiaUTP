@@ -10,6 +10,8 @@ package FormulariosSwing;
  * @author Home
  */
 public class JFrame_Principal extends javax.swing.JFrame {
+   
+    
 
     /**
      * Creates new form JFrame_Principal
