@@ -7,40 +7,37 @@ package Librería;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 /**
  *
  * @author via1
  */
 public class Producto {
-   ArrayList<MantenimientodeProductos>pro;
+   ArrayList<MantenimientoProductos>pro;
+   
    public Producto(){
-       pro= new ArrayList<>();
-       
+       pro=new ArrayList<>();
    }
-   public MantenimientodeProductos obtener (int pos){
-    return pro.get(pos);
-    }
-   public int tamaño(){
-       return.pro.size();
+   public MantenimientoProductos obtener(int pos){
+       return pro.get(pos);
    } 
-   public void adiconar(MantenimientodeProductos x){
+   public int tamaño(){
+       return pro.size();
+   }  
+   public  void adiconar(MantenimientoProducto x){
        pro.add(x);
+   } 
+   public void grabar (){
+       try {
+           PrintWriter pw= new PrintWriter (new FileWriter ("Guardado.txt"));
+          
+           for(int i=0; i < tamaño(), i++){
+               pw.print(obtener(i).getCodigo()+","+obtener(i).getNombre()+","+obtener(i).getPrecio()+
+                       ","+obtener(i).getCategoria()+","+obtener(i).getMarca()+","+obtener(i).getDescripcion());
+                    }pw.close();
+       }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"SE PRODUJO UN ERROR" );
+       }
    }
-   public void grabar(){
-       PrinWrinter pw=new PrintWinter(new FileWriter("Producto.csc"));
-       for (int i=0;i<tamaño();i++){
-           pw.print(obtener(i).getCodigo()+","+obtener(i).getNombre()+","+obtener(i).getDescripcion()
-                   +","+obtener(i).getPrecio()+","+obtener(i).getCategoria()
-                   +","+obtener(i).getMarca()+"\r\n");
-           }
-       pw.close();
-     } catch (Exception e) {
-        JOptionPane.showMessageDialog(null,"SE PRODUJO UN ERROR"); 
-}
-   
-   
-   
-   
-   
-   
 }

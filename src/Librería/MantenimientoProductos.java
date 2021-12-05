@@ -9,7 +9,7 @@ import FormulariosSwing.JFrame_MantenimientoDeProductos;
  
 
 
-public class MantenimientodeProductos {
+public class MantenimientoProductos {
     private int codigo;
     private String nombre;
     private double precio;
@@ -17,7 +17,7 @@ public class MantenimientodeProductos {
     private String Marca;
     private String Descripcion;
 
-    public MantenimientodeProductos(int codigo, String nombre, double precio, int Stock, String Categoria, String Marca, String Descripcion) {
+    public MantenimientoProductos(int codigo, String nombre, double precio, String Categoria, String Marca, String Descripcion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
