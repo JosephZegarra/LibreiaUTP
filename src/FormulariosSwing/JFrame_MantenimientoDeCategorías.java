@@ -25,15 +25,6 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         dtm.setColumnIdentifiers (titulo);
         tblDatos.setModel(dtm);
 
-        //datos por default
-        //dtm. addRow(new Object[]{
-        //    txtCódigo("");
-        //})
-        
-        //Metodos Getter and Setter
-        
-        
-        //METODOS
         
         
     }
@@ -57,8 +48,8 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     void Modificar()
     {
         int fila=tblDatos.getSelectedRow();
-        dtm.setValueAt(txtNombre.getText(), fila, 0);// el primero es lo que se escribira, el segundo en que fila se escribe y el tercero es la columna
-        dtm.setValueAt(txtCódigo.getText(), fila, 1);
+        dtm.setValueAt(txtCódigo.getText(), fila, 0);// el primero es lo que se escribira, el segundo en que fila se escribe y el tercero es la columna
+        dtm.setValueAt(txtNombre.getText(), fila, 1);
         dtm.setValueAt(txtDescripción.getText(), fila, 2);
     } 
     
