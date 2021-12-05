@@ -25,14 +25,14 @@ public class Producto {
    public int tamaño(){
        return pro.size();
    }  
-   public  void adiconar(MantenimientoProducto x){
+   public  void adiconar(MantenimientoProductos x){
        pro.add(x);
    } 
    public void grabar (){
        try {
            PrintWriter pw= new PrintWriter (new FileWriter ("Guardado.txt"));
           
-           for(int i=0; i < tamaño(), i++){
+           for(int i = 0; i < tamaño(), i++){
                pw.print(obtener(i).getCodigo()+","+obtener(i).getNombre()+","+obtener(i).getPrecio()+
                        ","+obtener(i).getCategoria()+","+obtener(i).getMarca()+","+obtener(i).getDescripcion());
                     }pw.close();

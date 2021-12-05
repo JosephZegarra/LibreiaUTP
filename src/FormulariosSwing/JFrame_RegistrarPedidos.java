@@ -16,6 +16,9 @@ public class JFrame_RegistrarPedidos extends javax.swing.JFrame {
      */
     public JFrame_RegistrarPedidos() {
         initComponents();
+            setLocationRelativeTo(null);
+            setResizable(false);
+
     }
 
     /**

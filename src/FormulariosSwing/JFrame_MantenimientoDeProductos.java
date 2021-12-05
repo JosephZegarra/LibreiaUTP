@@ -21,8 +21,11 @@ public class JFrame_MantenimientoDeProductos extends javax.swing.JFrame {
      */
     public JFrame_MantenimientoDeProductos() {
         initComponents();
-    }
+        setLocationRelativeTo(null);        
+                setResizable(false);
 
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -358,7 +361,7 @@ public class JFrame_MantenimientoDeProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        MantenimienoProductos Modelo =new MantenimientoProductos();
+        
         pro.adiconar(null);
     }//GEN-LAST:event_jButton3ActionPerformed
 
