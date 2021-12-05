@@ -5,17 +5,74 @@
  */
 package FormulariosSwing;
 
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Home
  */
 public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
+    DefaultTableModel dtm=new DefaultTableModel();
 
     /**
      * Creates new form JFrame_MantenimientoDeCategorías
      */
     public JFrame_MantenimientoDeCategorías() {
         initComponents();
+        
+        String[] titulo =new String[]{"Código","Nombre","Descripción"};
+        dtm.setColumnIdentifiers (titulo);
+        tblDatos.setModel(dtm);
+
+        //datos por default
+        //dtm. addRow(new Object[]{
+        //    txtCódigo("");
+        //})
+        
+        //Metodos Getter and Setter
+        
+        
+        //METODOS
+        
+        
+    }
+    
+    void Registrar() 
+        {
+            dtm.addRow(new Object[]{
+            txtNombre.getText(),txtCódigo.getText(),txtDescripción.getText()
+            
+            });
+            
+         }
+    
+    void Eliminar()
+    {
+        int fila=tblDatos.getSelectedRow();
+        dtm.removeRow(fila);
+    } 
+
+    
+    void Modificar()
+    {
+        int fila=tblDatos.getSelectedRow();
+        dtm.setValueAt(txtNombre.getText(), fila, 0);// el primero es lo que se escribira, el segundo en que fila se escribe y el tercero es la columna
+        dtm.setValueAt(txtCódigo.getText(), fila, 1);
+        dtm.setValueAt(txtDescripción.getText(), fila, 2);
+    } 
+    
+    
+    public JTextField getTxtCódigo() {
+        return txtCódigo;
+    }
+
+    public JTextField getTxtDescripción() {
+        return txtDescripción;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
     }
 
     /**
@@ -38,7 +95,13 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         btnAtras = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Table1 = new javax.swing.JTable();
+        tblDatos = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        txtCódigo = new javax.swing.JTextField();
+        txtDescripción = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,10 +151,25 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         });
 
         btnRegistrar.setText(" Registrar categoría");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         btnModificar.setText(" Modificar categoría");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar categoría");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnAtras.setText("Atras");
 
@@ -132,7 +210,7 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(102, 204, 255));
 
-        Table1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -143,7 +221,25 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
                 "Código", "Nombre", "Descripción"
             }
         ));
-        jScrollPane2.setViewportView(Table1);
+        jScrollPane2.setViewportView(tblDatos);
+
+        jLabel1.setText("Código:");
+
+        jLabel2.setText("Nombre:");
+
+        jLabel3.setText("Descripción:");
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+
+        txtCódigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCódigoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -151,15 +247,36 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCódigo)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtDescripción, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCódigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDescripción, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,6 +304,26 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void txtCódigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCódigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCódigoActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        Registrar(); 
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        Eliminar();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        Modificar();
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,17 +361,23 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Table1;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblDatos;
+    private javax.swing.JTextField txtCódigo;
+    private javax.swing.JTextField txtDescripción;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
