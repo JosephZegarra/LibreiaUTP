@@ -5,18 +5,66 @@
  */
 package FormulariosSwing;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Home
  */
 public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
-
+    DefaultTableModel dtm=new DefaultTableModel();
     /**
      * Creates new form JFrame_mantenimientoDeClientes
      */
     public JFrame_MantenimientoDeClientes() {
         initComponents();
+        
+        setLocationRelativeTo(null);      
+        setResizable(false);
+        
+        String[] titulo =new String[]{"DNI","Nombres","Apellidos","Dirección","Distrito","Correo","Celular"};
+        dtm.setColumnIdentifiers (titulo);
+        tblDatosClientes.setModel(dtm);
+        
+        
     }
+    
+    
+    //METODOS
+    void Atras()
+    {
+        JFrame_Principal IrPrincipal=new JFrame_Principal();
+        IrPrincipal.setVisible(true);
+        dispose();
+    }
+    
+    void Registrar() 
+        {
+            dtm.addRow(new Object[]{
+            txtDNI.getText(),txtNombres.getText(),txtApellidos.getText()
+            ,txtDirección.getText(),txtDistrito.getText(),txtCorreo.getText(),txtCelular.getText()
+            });
+            
+         }
+    
+    void Eliminar()
+    {
+        int fila=tblDatosClientes.getSelectedRow();
+        dtm.removeRow(fila);
+    } 
+
+    
+    void Modificar()
+    {
+        int fila=tblDatosClientes.getSelectedRow();
+        dtm.setValueAt(txtDNI.getText(), fila, 0);// el primero es lo que se escribira, el segundo en que fila se escribe y el tercero es la columna
+        dtm.setValueAt(txtNombres.getText(), fila, 1);
+        dtm.setValueAt(txtApellidos.getText(), fila, 2);
+        dtm.setValueAt(txtDirección.getText(), fila, 3);
+        dtm.setValueAt(txtDistrito.getText(), fila, 4);
+        dtm.setValueAt(txtCorreo.getText(), fila, 5);
+        dtm.setValueAt(txtCelular.getText(), fila, 6);
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -186,6 +234,11 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
         });
 
         btnRegistrar.setText(" Registrar cliente");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         btnModificar.setText("Modificar cliente");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -195,6 +248,11 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
         });
 
         btnEliminar.setText("Eliminar cliente");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Acciones :");
 
@@ -269,12 +327,20 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
+        Modificar();
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        // TODO add your handling code here:
+        Atras();
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        Registrar();
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        Eliminar();
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -21,12 +21,21 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     public JFrame_MantenimientoDeCategorías() {
         initComponents();
         
+        setLocationRelativeTo(null);      
+        setResizable(false);
+
         String[] titulo =new String[]{"Código","Nombre","Descripción"};
         dtm.setColumnIdentifiers (titulo);
         tblDatos.setModel(dtm);
 
         
         
+    }
+    
+    void Atras(){
+        JFrame_Principal IrPrincipal=new JFrame_Principal();
+        IrPrincipal.setVisible(true);
+        dispose();
     }
     
     void Registrar() 
@@ -48,10 +57,12 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     void Modificar()
     {
         int fila=tblDatos.getSelectedRow();
-        dtm.setValueAt(txtCódigo.getText(), fila, 0);// el primero es lo que se escribira, el segundo en que fila se escribe y el tercero es la columna
-        dtm.setValueAt(txtNombre.getText(), fila, 1);
+        dtm.setValueAt(txtNombre.getText(), fila, 0);// el primero es lo que se escribira, el segundo en que fila se escribe y el tercero es la columna
+        dtm.setValueAt(txtCódigo.getText(), fila, 1);
         dtm.setValueAt(txtDescripción.getText(), fila, 2);
     } 
+    
+    
     
     
     public JTextField getTxtCódigo() {
@@ -163,6 +174,11 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         });
 
         btnAtras.setText("Atras");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -315,6 +331,10 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         Modificar();
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        Atras();
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
