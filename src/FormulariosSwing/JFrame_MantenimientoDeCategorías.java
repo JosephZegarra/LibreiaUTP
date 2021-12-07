@@ -7,6 +7,8 @@ package FormulariosSwing;
 
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import Librería.GestionCategoría;
+import Librería.PlantillaCategoría;
 
 /**
  *
@@ -14,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     DefaultTableModel dtm=new DefaultTableModel();
+    GestionCategoría  pro =new GestionCategoría ();
 
     /**
      * Creates new form JFrame_MantenimientoDeCategorías
@@ -31,6 +34,9 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         
         
     }
+    
+    
+    
     
     void Atras(){
         JFrame_Principal IrPrincipal=new JFrame_Principal();
@@ -61,6 +67,14 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         dtm.setValueAt(txtCódigo.getText(), fila, 1);
         dtm.setValueAt(txtDescripción.getText(), fila, 2);
     } 
+    
+    
+    // variables de plantilla
+    
+    
+    
+    
+    
     
     
     
@@ -321,7 +335,10 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCódigoActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        Registrar(); 
+        Registrar();
+        PlantillaCategoría plantilla = new PlantillaCategoría(txtNombre.getText(), txtCódigo.getText(), txtDescripción.getText());
+        pro.adicionar(plantilla);
+        pro.grabar();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

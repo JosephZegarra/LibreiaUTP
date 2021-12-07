@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package edu.utp.taller;
+import FormulariosSwing.JFrame_Principal;
+
+import FormulariosSwing.JFrame_Principal;
 
 /**
  *
@@ -16,14 +19,23 @@ public class Main {
      */
     public static void main(String[] args) 
     {
-        System.out.print("Hola mundo");
-        
+     Iniciar();
+            
     }
-    //esto es una prueba
-    int a, b,c;
+
     
-    int d, e ,g;
-    //HolaMundo
-    //prueba02
-    // prueba 3
+    
+    
+    private static void Iniciar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
