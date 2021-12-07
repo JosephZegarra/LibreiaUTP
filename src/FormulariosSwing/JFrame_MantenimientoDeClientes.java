@@ -6,6 +6,7 @@
 package FormulariosSwing;
 
 import Librería.AuxCategoría;
+import Librería.AuxCliente;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import Librería.GestionClientes;
@@ -29,7 +30,7 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
         String[] titulo =new String[]{"DNI","Nombres","Apellidos","Dirección","Distrito","Correo","Celular"};
         dtm.setColumnIdentifiers (titulo);
         tblDatosClientes.setModel(dtm);
-        
+        AuxCliente.listarCliente(dtm, 10);
         
         
     }
@@ -70,6 +71,70 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
         dtm.setValueAt(txtCorreo.getText(), fila, 5);
         dtm.setValueAt(txtCelular.getText(), fila, 6);
     } 
+
+    public JTextField getTxtApellidos() {
+        return txtApellidos;
+    }
+
+    public void setTxtApellidos(JTextField txtApellidos) {
+        this.txtApellidos = txtApellidos;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
+    }
+
+    public JTextField getTxtCelular() {
+        return txtCelular;
+    }
+
+    public void setTxtCelular(JTextField txtCelular) {
+        this.txtCelular = txtCelular;
+    }
+
+    public JTextField getTxtCorreo() {
+        return txtCorreo;
+    }
+
+    public void setTxtCorreo(JTextField txtCorreo) {
+        this.txtCorreo = txtCorreo;
+    }
+
+    public JTextField getTxtDNI() {
+        return txtDNI;
+    }
+
+    public void setTxtDNI(JTextField txtDNI) {
+        this.txtDNI = txtDNI;
+    }
+
+    public JTextField getTxtDirección() {
+        return txtDirección;
+    }
+
+    public void setTxtDirección(JTextField txtDirección) {
+        this.txtDirección = txtDirección;
+    }
+
+    public JTextField getTxtDistrito() {
+        return txtDistrito;
+    }
+
+    public void setTxtDistrito(JTextField txtDistrito) {
+        this.txtDistrito = txtDistrito;
+    }
+
+    public JTextField getTxtNombres() {
+        return txtNombres;
+    }
+
+    public void setTxtNombres(JTextField txtNombres) {
+        this.txtNombres = txtNombres;
+    }
 
     
     
@@ -173,6 +238,11 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscarActionPerformed(evt);
+            }
+        });
+        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscarKeyTyped(evt);
             }
         });
 
@@ -366,10 +436,10 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
         PlantillaClientes plantilla = new PlantillaClientes(txtDNI.getText(), txtNombres.getText(), 
                 txtApellidos.getText(), txtDirección.getText(), txtDistrito.getText(), 
                 txtCorreo.getText(), txtCelular.getText());
-        pro.adicionar(plantilla);
+        pro.adiconar(plantilla);
         pro.grabar();
         
-        AuxCategoría.listarCategoría(dtm, 10);
+        AuxCliente.listarCliente(dtm, 10);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -379,6 +449,10 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
     private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
         
     }//GEN-LAST:event_txtBuscarActionPerformed
+
+    private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
+        AuxCliente.buscarCliente(evt, txtBuscar.getText(), dtm);
+    }//GEN-LAST:event_txtBuscarKeyTyped
 
     /**
      * @param args the command line arguments

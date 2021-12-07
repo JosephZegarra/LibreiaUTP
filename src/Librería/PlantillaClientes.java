@@ -12,12 +12,7 @@ import Librería.GestionClientes;
  * @author Home
  */
 public class PlantillaClientes 
-{
-    
-    
-    
-    JFrame_MantenimientoDeClientes Var = new JFrame_MantenimientoDeClientes();
-    private String DNI;
+{   private String DNI;
     private String Nombre;
     private String Apellidos;
     private String Dirección;
@@ -42,75 +37,105 @@ public class PlantillaClientes
 
     
     //getter and setter
-    
-    //codigo opcional
-    PlantillaClientes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    public JFrame_MantenimientoDeClientes getVar() {
-        return Var;
-    }
-
-    public void setVar(JFrame_MantenimientoDeClientes Var) {
-        this.Var = Var;
-    }
-
+    /**
+     * @return the DNI
+     */
     public String getDNI() {
         return DNI;
     }
 
+    /**
+     * @param DNI the DNI to set
+     */
     public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 
+    /**
+     * @return the Nombre
+     */
     public String getNombre() {
         return Nombre;
     }
 
+    /**
+     * @param Nombre the Nombre to set
+     */
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
+    /**
+     * @return the Apellidos
+     */
     public String getApellidos() {
         return Apellidos;
     }
 
+    /**
+     * @param Apellidos the Apellidos to set
+     */
     public void setApellidos(String Apellidos) {
         this.Apellidos = Apellidos;
     }
 
+    /**
+     * @return the Dirección
+     */
     public String getDirección() {
         return Dirección;
     }
 
+    /**
+     * @param Dirección the Dirección to set
+     */
     public void setDirección(String Dirección) {
         this.Dirección = Dirección;
     }
 
+    /**
+     * @return the Distrito
+     */
     public String getDistrito() {
         return Distrito;
     }
 
+    /**
+     * @param Distrito the Distrito to set
+     */
     public void setDistrito(String Distrito) {
         this.Distrito = Distrito;
     }
 
+    /**
+     * @return the Correo
+     */
     public String getCorreo() {
         return Correo;
     }
 
+    /**
+     * @param Correo the Correo to set
+     */
     public void setCorreo(String Correo) {
         this.Correo = Correo;
     }
 
+    /**
+     * @return the Celular
+     */
     public String getCelular() {
         return Celular;
     }
 
+    /**
+     * @param Celular the Celular to set
+     */
     public void setCelular(String Celular) {
         this.Celular = Celular;
     }
+    
     
     
     

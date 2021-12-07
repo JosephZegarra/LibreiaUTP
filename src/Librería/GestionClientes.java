@@ -27,8 +27,33 @@ public class GestionClientes
     public GestionClientes() 
     {
     pro=new ArrayList<>();
+    cargar();
     
-    
+    }
+    public void cargar(){
+        try {
+            File archivo=new File("Clientes.txt");
+            if(archivo.exists()){
+                BufferedReader br=new BufferedReader(new FileReader(archivo));
+                String linea="";
+                while((linea=br.readLine())!=null ){
+                        StringTokenizer st=new StringTokenizer(linea,",");
+                        String DNI=st.nextToken();
+                        String Nombre=st.nextToken();
+                        String Apellidos=st.nextToken();
+                        String Dirección=st.nextToken();
+                        String Distrito=st.nextToken();
+                        String Correo=st.nextToken();
+                        String Celular=st.nextToken();
+                        PlantillaClientes x=new PlantillaClientes(DNI,Nombre,Apellidos,Dirección,Distrito,Correo,Celular);
+                        adiconar(x);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "EL ARCHIVO NO EXISTE");
+            }
+            
+        } catch (Exception e) {
+        }
     }
     //Metodo de relleno cargar();
     
@@ -42,7 +67,7 @@ public class GestionClientes
     {
     return pro.size ();
     }
-    public void adicionar(PlantillaClientes x) 
+    public void adiconar(PlantillaClientes x) 
     {
     pro.add(x); 
     }
