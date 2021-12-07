@@ -50,6 +50,16 @@ public class JFrame_MantenimientoDeProductos extends javax.swing.JFrame {
         int fila=tblPanel.getSelectedRow();
         dtm.removeRow(fila);
     } 
+    void Modificar()
+    {
+        int fila=tblPanel.getSelectedRow();
+        dtm.setValueAt(txtCodigo.getText(), fila, 0);// el primero es lo que se escribira, el segundo en que fila se escribe y el tercero es la columna
+        dtm.setValueAt(txtNombre.getText(), fila, 1);
+        dtm.setValueAt(txtPrecio.getText(), fila, 2);
+        dtm.setValueAt(txtCategoria.getText(), fila, 5);
+        dtm.setValueAt(txtMarca.getText(), fila, 4);
+        dtm.setValueAt(txtDescripcion.getText(), fila, 3);
+    } 
 
     public JTextField getTxtCategoria() {
         return txtCategoria;
@@ -223,8 +233,18 @@ public class JFrame_MantenimientoDeProductos extends javax.swing.JFrame {
         });
 
         jButton4.setText("  Modificar producto ");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText(" Eliminar producto");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
 
@@ -310,6 +330,11 @@ public class JFrame_MantenimientoDeProductos extends javax.swing.JFrame {
         txtBuscaCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBuscaCategoryActionPerformed(evt);
+            }
+        });
+        txtBuscaCategory.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBuscaCategoryKeyTyped(evt);
             }
         });
 
@@ -521,6 +546,18 @@ public class JFrame_MantenimientoDeProductos extends javax.swing.JFrame {
     private void txtBucaNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBucaNameKeyTyped
         AuxProducto.buscarProducto(evt, txtBucaName.getText(), dtm);
     }//GEN-LAST:event_txtBucaNameKeyTyped
+
+    private void txtBuscaCategoryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscaCategoryKeyTyped
+        AuxProducto.buscarProductoCat(evt,txtBuscaCategory.getText(), dtm);
+    }//GEN-LAST:event_txtBuscaCategoryKeyTyped
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Eliminar();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        Modificar();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
