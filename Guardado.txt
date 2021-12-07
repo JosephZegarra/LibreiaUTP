@@ -1,17 +1,9 @@
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
-1,Lapiz Pilot,2.5,Util Escolar,Pilot,Sirve para pintar
+LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
+LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
+LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
+LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
+LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
+LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
+LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
+GCM2021,GOMA,5,Pegamentos,Artes,Pega
+cCC2021,CORRECTOR,2.5,BORRADOR,ArtesCO,CORRIGE
