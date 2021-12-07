@@ -10,14 +10,14 @@ import FormulariosSwing.JFrame_MantenimientoDeProductos;
 
 
 public class MantenimientoProductos {
-    private int codigo;
+    private String codigo;
     private String nombre;
-    private double precio;
+    private String precio;
     private String Categoria;
     private String Marca;
     private String Descripcion;
 
-    public MantenimientoProductos(int codigo, String nombre, double precio, String Categoria, String Marca, String Descripcion) {
+    public MantenimientoProductos(String codigo, String nombre, String precio, String Categoria, String Marca, String Descripcion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
@@ -29,14 +29,14 @@ public class MantenimientoProductos {
     /**
      * @return the codigo
      */
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -57,14 +57,14 @@ public class MantenimientoProductos {
     /**
      * @return the precio
      */
-    public double getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
     /**
      * @param precio the precio to set
      */
-    public void setPrecio(double precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
 
