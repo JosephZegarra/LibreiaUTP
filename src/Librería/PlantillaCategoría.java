@@ -4,56 +4,65 @@
  * and open the template in the editor.
  */
 package Librería;
-import FormulariosSwing.JFrame_MantenimientoDeCategorías;
+
 import Librería.GestionCategoría;
 /**
  *
  * @author Home
  */
 public class PlantillaCategoría 
-{
-    
-    JFrame_MantenimientoDeCategorías Var = new JFrame_MantenimientoDeCategorías();
-    private String Nombre;
+{   private String Nombre;
     private String Código;
     private String Descripción;
     
 
     public PlantillaCategoría(String Nombre, String Código, String Descripción) {
-        this.Nombre = Nombre;Var.getTxtNombre().getText();  //Var.getTxtNombre().getText();
-        this.Código = Código;Var.getTxtCódigo().getText(); //Var.getTxtCódigo().getText();
-        this.Descripción = Descripción;Var.getTxtDescripción().getText(); //Var.getTxtDescripción().getText();
+        this.Nombre = Nombre;
+        this.Código = Código;
+        this.Descripción = Descripción;
     }
      //getter and setter
 
-    PlantillaCategoría() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    /**
+     * @return the Nombre
+     */
     public String getNombre() {
         return Nombre;
     }
 
+    /**
+     * @param Nombre the Nombre to set
+     */
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
+    /**
+     * @return the Código
+     */
     public String getCódigo() {
         return Código;
     }
 
+    /**
+     * @param Código the Código to set
+     */
     public void setCódigo(String Código) {
         this.Código = Código;
     }
 
+    /**
+     * @return the Descripción
+     */
     public String getDescripción() {
         return Descripción;
     }
 
+    /**
+     * @param Descripción the Descripción to set
+     */
     public void setDescripción(String Descripción) {
         this.Descripción = Descripción;
     }
-    
-    
-    
+
 }

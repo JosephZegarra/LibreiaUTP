@@ -31,10 +31,9 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         String[] titulo =new String[]{"Código","Nombre","Descripción"};
         dtm.setColumnIdentifiers (titulo);
         tblDatos.setModel(dtm);
-
+        AuxCategoría.listarCategoría(dtm, 10);
         
-        
-    }
+      }
     
     
     
@@ -45,14 +44,14 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
         dispose();
     }
     
-    void Registrar() 
-        {
-            dtm.addRow(new Object[]{
-            txtCódigo.getText(),txtNombre.getText(),txtDescripción.getText()
+    //void Registrar() 
+        //{
+          //  dtm.addRow(new Object[]{
+           // txtCódigo.getText(),txtNombre.getText(),txtDescripción.getText()
             
-            });
+           // });
             
-         }
+       //  }
     
     void Eliminar()
     {
@@ -90,6 +89,18 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
 
     public JTextField getTxtNombre() {
         return txtNombre;
+    }
+
+    public void setTxtCódigo(JTextField txtCódigo) {
+        this.txtCódigo = txtCódigo;
+    }
+
+    public void setTxtDescripción(JTextField txtDescripción) {
+        this.txtDescripción = txtDescripción;
+    }
+
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
     }
 
     public JTextField getTxtBuscar() {
@@ -371,10 +382,11 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCódigoActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        Registrar();
+        //Registrar();
         PlantillaCategoría plantilla = new PlantillaCategoría(txtCódigo.getText(), txtNombre.getText(), txtDescripción.getText());
-        pro.adicionar(plantilla);
+        pro.adiconar(plantilla);
         pro.grabar();
+        AuxCategoría.listarCategoría(dtm, 10);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -394,7 +406,7 @@ public class JFrame_MantenimientoDeCategorías extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBuscarActionPerformed
 
     private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
-        
+        AuxCategoría.buscarCategoría(evt, txtBuscar.getText(), dtm);
     }//GEN-LAST:event_txtBuscarKeyTyped
 
     /**

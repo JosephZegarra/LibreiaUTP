@@ -33,7 +33,7 @@ public static void buscarProducto (KeyEvent tecla,String texto, DefaultTableMode
      Producto pro=new Producto();
      char t=tecla.getKeyChar();
      String cadena=texto+""+t;
-     if(t==KeyEvent.VK_BACK_SPACE){ //Este if sirve para quealborrarun caracter no genere error
+     if(t==KeyEvent.VK_BACK_SPACE){ //Este if sirve para que al borrarun caracter no genere error
          cadena=texto.substring(0,cadena.length()-1);
       }
      int numFilas = dtm.getRowCount();

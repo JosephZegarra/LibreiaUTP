@@ -1,25 +1,6 @@
-bb,aa, cc
-bb,aa,  cc
-aa,bb,   cc
-aa,bb,    cc
-aa,bb,    cc
-aa,bb,     cc
-bb,aa,  cc
-bb,aa,   cc
-aa,bb,    cc
-aa,bb,     cc
-aa,bb,     cc
-aa,bb,      cc
-bb,aa, cc
-bb,aa,  cc
-bb,aa,   cc
-aa,bb,    cc
-aa,bb,     cc
-aa,bb,     cc
-aa,bb,      cc
-bb,aa,   cc
-bb,aa,    cc
-aa,bb,     cc
-aa,bb,      cc
-aa,bb,      cc
-aa,bb,       cc
+fgf,fgf,fgfg
+fgf,fgf,fgfg
+gf,fgf,gfg
+gf,fgf,gfg
+ttt,ffff,ooo
+ttt,ffff,ooo

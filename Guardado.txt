@@ -1,9 +1,4 @@
-LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
-LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
-LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
-LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
-LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
-LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
-LM2021,Lapiz Portamina,5,Mracador,Faber Castell,Lapiz que utilizaminas 2.5
-GCM2021,GOMA,5,Pegamentos,Artes,Pega
-cCC2021,CORRECTOR,2.5,BORRADOR,ArtesCO,CORRIGE
+JJ2021,GOMA,4,PEGAMENTOS,ARTESCO,PEGA
+JJ2021,GOMA,4,PEGAMENTOS,ARTESCO,PEGA
+JJ2021,SILICONA,12,PEGAMENTOS,VINIFAN,PEGA
+JJ2021,SILICONA,12,PEGAR,VINIFAN,PEGA
