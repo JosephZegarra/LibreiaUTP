@@ -42,7 +42,7 @@ public class AuxCliente {
             }
         }
      for(int i =0 ;i<pro.tamaño();i++){
-      if(pro.obtener(i).getNombre().contains(cadena)){
+      if(pro.obtener(i).getNombre().contains(cadena)){ //DefinimosLa variable con la que se va a buscat
           Object[] obj = new Object[]{
               pro.obtener(i).getDNI(),pro.obtener(i).getNombre(),pro.obtener(i).getApellidos(),pro.obtener(i).getDirección()
                     ,pro.obtener(i).getDistrito(),pro.obtener(i).getCorreo(),pro.obtener(i).getCelular()

@@ -34,7 +34,7 @@ public class GestionClientes
         try {
             File archivo=new File("Clientes.txt");
             if(archivo.exists()){
-                BufferedReader br=new BufferedReader(new FileReader(archivo));
+                BufferedReader br=new BufferedReader(new FileReader(archivo));//
                 String linea="";
                 while((linea=br.readLine())!=null ){
                         StringTokenizer st=new StringTokenizer(linea,",");

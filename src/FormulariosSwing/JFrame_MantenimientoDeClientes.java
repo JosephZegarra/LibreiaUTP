@@ -29,7 +29,7 @@ public class JFrame_MantenimientoDeClientes extends javax.swing.JFrame {
         
         String[] titulo =new String[]{"DNI","Nombres","Apellidos","Dirección","Distrito","Correo","Celular"};
         dtm.setColumnIdentifiers (titulo);
-        tblDatosClientes.setModel(dtm);
+        tblDatosClientes.setModel(dtm);//Definicion de la tabla de trabajo
         AuxCliente.listarCliente(dtm, 10);
         
         
